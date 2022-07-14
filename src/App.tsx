@@ -3,6 +3,25 @@ import { useLayoutEffect, useState } from "react";
 import { Router, Routes, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
+import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import About from "./pages/About";
+import Dogs from "./pages/dogs";
+import FetchExample from "./pages/FetchExample";
+import BasicTable from "./pages/Table";
+import Crud from "./pages/Crud";
+
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
 /**
  * https://stackoverflow.com/questions/71868736/router-does-not-work-with-link-react-router-dom-6
  */
@@ -16,16 +35,15 @@ export default function App() {
   });
 
   useLayoutEffect(() => history.listen(setState), [history]);
+
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-
       <Router
         location={state.location}
         navigationType={state.action}
         navigator={history}
       >
+        <h1>PName</h1>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -36,13 +54,30 @@ export default function App() {
           <li>
             <Link to="/pricing">Pricing</Link>
           </li>
+          <li>
+            <Link to="/dogs">Dogs</Link>
+          </li>
+          <li>
+            <Link to="/fetch">Fetch</Link>
+          </li>
+          <li>
+            <Link to="/table">Table</Link>
+          </li>
+          <li>
+            <Link to="/crud">CRUD</Link>
+          </li>
         </ul>
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
-          <Route path="/about" element={<h1>About</h1>} />
-          <Route path="/pricing" element={<h1>Pricing</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/dogs" element={<Dogs />} />
+          <Route path="/fetch" element={<FetchExample />} />
+          <Route path="/table" element={<BasicTable />} />
+          <Route path="/crud" element={<Crud />} />
         </Routes>
       </Router>
     </div>
   );
 }
+  
