@@ -9,7 +9,7 @@ import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
 
-export default function App() {
+export default function Home() {
   const [state, setState] = useState({
     action: history.action,
     location: history.location
