@@ -136,7 +136,7 @@ const FetchExample: React.FC = () => {
                 {photos ? (
                     <p>Number of photos: {photos.length}</p>
                 ) : photosError ? (
-                    <p>An error occurred fetching photos 😢</p>
+                    <p>An error occurred</p>
                 ) : (
                     <p>Loading photos...</p>
                 )}
@@ -149,17 +149,17 @@ const FetchExample: React.FC = () => {
                     </ul>
                 </>
             ) : todosError ? (
-                <p>An error occurred fetching todos 😢</p>
+                <p>An error occurred</p>
             ) : (
                 <p>Loading todos...</p>
             )}</div>
             <div className="todo-failure">
                 {badTodos ? (
-                    <p>Number of bad todos (wait, really? this shouldn't have worked): {badTodos.length}</p>
+                    <p>{badTodos.length}</p>
                 ) : badTodosError ? (
-                    <p>An error occurred fetching bad todos (not a surprise though 😎)</p>
+                    <p></p>
                 ) : (
-                    <p>Loading bad todos...failure imminent...</p>
+                    <p>Loading...</p>
                 )}
             </div>
         </div>

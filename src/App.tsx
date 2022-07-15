@@ -15,6 +15,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import AsyncForms from "./components/form";
+import Demo from "./components/demo";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -66,6 +68,9 @@ export default function App() {
           <li>
             <Link to="/crud">CRUD</Link>
           </li>
+          <li>
+            <Link to="/demo">MUI Demo</Link>
+          </li>
         </ul>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -75,6 +80,7 @@ export default function App() {
           <Route path="/fetch" element={<FetchExample />} />
           <Route path="/table" element={<BasicTable />} />
           <Route path="/crud" element={<Crud />} />
+          <Route path="/demo" element={<AsyncForms/>} />
         </Routes>
       </Router>
     </div>
